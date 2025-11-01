@@ -6,12 +6,21 @@ const app = express();
 const PORT = 3000;
 
 // กำหนดโฟลเดอร์ที่จะเก็บไฟล์
+const fs = require("fs");
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+    const targetFolder = req.body.targetFolder || "uploads/images";
+
+    // ถ้าโฟลเดอร์ยังไม่มี ให้สร้าง
+    if (!fs.existsSync(targetFolder)) {
+      fs.mkdirSync(targetFolder, { recursive: true });
+    }
+
+    cb(null, targetFolder);
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname))
+    cb(null, Date.now() + path.extname(file.originalname));
   }
 });
 

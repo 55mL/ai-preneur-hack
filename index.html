@@ -30,6 +30,13 @@
   </style>
 </head>
 <body>
+  <label>เลือกโฟลเดอร์ปลายทาง:</label>
+    <select id="folderSelect">
+    <option value="uploads/images">Images</option>
+    <option value="uploads/documents">Documents</option>
+    <option value="uploads/others">Others</option>
+  </select>
+  <br><br>
   <div id="drop-area">
     <p>Drag & Drop images here</p>
     <p>or <button id="fileSelect">Select Files</button></p>
@@ -91,6 +98,9 @@
       let url = '/upload';
       let formData = new FormData();
       formData.append('file', file);
+
+      let folder = document.getElementById("folderSelect").value;
+      formData.append("targetFolder", folder);
 
       fetch(url, {
         method: 'POST',
