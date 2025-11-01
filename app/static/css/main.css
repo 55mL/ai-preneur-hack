@@ -1,0 +1,58 @@
+/*
+ * File: main.css
+ * Description: Main stylesheet for the web application.
+ * Updated: 2025-10-31 (Neptune)
+ * 
+ */
+
+ /* Importing fonts */
+ @font-face {
+    font-family: 'SF Pro Regular';
+    src: url(/app/static/fonts/SFPRO/SFPRODISPLAYREGULAR.OTF);
+ }
+
+ @font-face {
+    font-family: 'SF Pro Medium';
+    src: url(/app/static/fonts/SFPRO/SFPRODISPLAYMEDIUM.OTF);
+ }
+
+ @font-face {
+    font-family: 'SF Pro Bold';
+    src: url(/app/static/fonts/SFPRO/SFPRODISPLAYBOLD.OTF);
+ }
+
+ /* Defining CSS variables*/
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    
+    /* สีเบส */
+    --color-dark: #2C3E50;
+    --color-light: #ECF0F1;
+    --color-white: #FFFFFF;
+    --color-cream: #FFFEF7;
+    --color-black: #000000;
+    --color-gray: #95A5A6;
+    --color-glass: rgba(255, 255, 255, 0.4);
+
+    /* ค่าเว้นวรรค */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* มุม */
+    --radius-box: 30px;
+    --radius-button: 40px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    /* เงา */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
